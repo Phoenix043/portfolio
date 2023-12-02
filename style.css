@@ -1,0 +1,344 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: #282A36;
+} */
+
+.navigation {
+	position: relative;
+	/* width: 500px; */
+	height: 80px;
+	background: white;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	border-radius: 10px;
+	/* background-color: #266ae8; */
+	margin-top: 20px;
+}
+
+
+
+.navigation ul li {
+	list-style: none;
+	position: relative;
+	width: 70px; /* ul: width 350 / 5 = 70 */
+	height: 60px;
+	z-index: 2;
+}
+
+.navigation ul li a {
+	text-decoration: none;
+	color:#555;	
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+}
+
+.navigation ul li a .icon {
+	position:relative;
+	background: #fff;
+	display:block;
+	width: 55px;
+	height: 55px;
+	text-align: center;
+	line-height: 65px;
+	border-radius: 65px;
+	color: #222327;
+	font-size: 1.5em;
+	transition: 0.5s;
+	transition-delay: 0s;
+	/* width: 100px; */
+}
+
+.navigation ul li.active a .icon {
+	background: var(--clr);
+	color: #fff;
+	transform: translatey(-27px);
+	transition-delay: 0.25s;
+}
+
+.navigation ul li a .icon:before {
+	content: '';
+	position: absolute;
+	top: 10px;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: var(--clr);
+	border-radius: 50%;
+	filter: blur(5px);
+	opacity:0;
+	transition: .5s;
+	transition-delay: 0.15s;
+}
+
+.navigation ul li.active a .icon:before {
+	opacity: 0.5;
+	transition-delay: 0.25s;
+}
+
+.indicator {
+	position: absolute;
+	top: -35px;
+	width: 70px;
+	height: 70px;
+	background: #ffffff;
+	border-radius: 50%;
+	z-index: 1;
+	transition: 0.5s;
+}
+
+.indicator::before {
+	content: '';
+	position: absolute;
+	top: 5px;
+	left: -27.5px;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	box-shadow: 15px 18px #fff
+}
+
+.indicator::after {
+	content: '';
+	position: absolute;
+	top: 5px;
+	right: -27.5px;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	box-shadow: -15px 18px #fff
+}
+
+.navigation ul li:nth-child(1).active ~ .indicator {
+	transform: translatex(calc(70px * 0));
+}
+
+.navigation ul li:nth-child(2).active ~ .indicator {
+	transform: translatex(calc(70px * 1));
+}
+
+.navigation ul li:nth-child(3).active ~ .indicator {
+	transform: translatex(calc(70px * 2));
+}
+
+.navigation ul li:nth-child(4).active ~ .indicator {
+	transform: translatex(calc(70px * 3));
+}
+
+.navigation ul li:nth-child(5).active ~ .indicator {
+	transform: translatex(calc(70px * 4));
+}
+
+.allList {
+	display: flex;
+	width: 90%;
+	justify-content: space-around;
+	margin: auto;
+}
+
+
+
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            /* height: 100vh; */ height: 100px;
+            background-color: #f1f9ff;
+            flex-wrap: wrap;
+            flex-direction: column;
+        }
+
+        .container h1{
+            font-size: 40px;
+            line-height: 5;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 300;
+        }
+
+        .social{
+            display: flex;
+            gap: 30px;
+        }
+
+        .social a{
+            position: relative;
+            width: 80px;
+            height: 80px;
+            text-align: center;
+            text-decoration: none;
+            color: #000;
+            background: linear-gradient(145deg, #ffffff, #d9e0e6);
+            box-shadow: inset 6px 6px 14px #8e9396,
+                    inset -6px -6px 14px #ffffff;
+            border-radius: 25px;
+            overflow: hidden;
+        }
+
+        .social a .fa-brands{
+            position: relative;
+            font-size: 30px;
+            line-height: 80px;
+            z-index: 2;
+            transition: color 0.5s;
+            
+        }
+
+        .social a::after{
+            content: '';
+            width: 100%;
+            height: 100%;
+            top: -90px;
+            left: 0;
+            background: linear-gradient(-45deg, #12c2e9, #c471ed, #f64f59);
+            position: absolute;
+            border-radius: 25px;
+            transition: 0.5s ease;
+        }
+
+        .social a:hover::after{
+            top: 0;
+        }
+
+        .social a:hover .fa-brands{
+            color: #fff;
+            text-shadow:  1px 2px 14px #8e93969c,
+                    -1px -2px 14px #ffffffb7;
+        }
+
+		video{
+			/* object-fit: cover; */
+			height: 250px;
+			width: 100%;
+		}
+		
+		section{
+			background:#070101 ;
+		}
+		
+		h1{
+			position: absolute;
+			top: 30%;
+			transform: translateY(-50%);
+			width: 100%;
+			text-align: center;
+			letter-spacing: 1rem;
+			text-transform: uppercase;
+			color: #f5f5f5;
+			font-size: 4em;
+			font-family: sans-serif;
+		}
+		
+		h1 span{
+			display: inline-block;
+			animation: animate 1s  ease-in-out;
+		
+		}
+		
+		@keyframes animate{
+			0%{
+				opacity: 0%;
+				transform: rotateY(90deg);
+				filter: blur(10px);
+			}
+			100%{
+				opacity: 1;
+				transform: rotateY(0deg);
+				filter: blur(0px);
+		}
+		}
+		h1 span:nth-child(1)
+		{
+			animation-delay: 0.6s;
+		}
+		h1 span:nth-child(2)
+		{
+			animation-delay: 1s;
+		}
+		h1 span:nth-child(3)
+		{
+			animation-delay: 1.7s;
+		}
+		h1 span:nth-child(4)
+		{
+			animation-delay: 2.3s;
+		}
+		h1 span:nth-child(5)
+		{
+			animation-delay: 2.7s;
+		}
+		h1 span:nth-child(6)
+		{
+			animation-delay: 3.2s;
+		}
+		h1 span:nth-child(7)
+		{
+			animation-delay: 3.7s;
+		}
+		h1 span:nth-child(8)
+		{
+			animation-delay: 4s;
+		}
+
+		@-webkit-keyframes scribble {
+			to {
+			  stroke-dashoffset: 0;
+			}
+		  }
+		  @keyframes scribble {
+			to {
+			  stroke-dashoffset: 0;
+			}
+		  }
+		  
+		  div#stripped {
+			position: relative;
+			bottom: 100px;
+			max-width: 350px;
+			margin: 0 auto;
+			background: #000;
+			background-image: url('./Image.jpg');
+			background-size: cover;
+			font-size: 0;
+		  }
+		
+		  
+		  div#stripped svg {
+			background: #000;
+			mix-blend-mode: darken;
+		  }
+		  
+		  div#stripped svg polyline {
+			fill: none;
+			stroke: #f00;
+			stroke-width: 200;
+			stroke-dasharray: 20000;
+			stroke-dashoffset: 20000;
+			-webkit-animation: scribble 4s linear forwards;
+					animation: scribble 4s linear forwards;
+		  }
+		  @media 
+		  (-webkit-min-device-pixel-ratio: 2), 
+		  (min-resolution: 192dpi) { 
+			div#stripped {
+			background-image: url('./Image.jpg');
+			}
+		  }
+		
